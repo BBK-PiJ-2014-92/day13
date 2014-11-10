@@ -17,19 +17,23 @@ public class LibraryUsersTest {
 
 	@Test
 	public void testGetName() {
+		System.out.println("Test 1");
 		String expected = "Steve";
 		assertEquals(test.getName(), expected);
 	}
 
 	@Test
 	public void testGetLibraryID() {
-		int expected = 1;
+		System.out.println("Test 2");
+		String name = "Steve";
+		int expected = HashUtilities.shortHash(name.hashCode());
 		assertTrue(test.getID() == expected);
 	}
 
 	@Test
 	public void testSetLibraryID() {
+		System.out.println("Test 3");
 		test2 = new LibraryUsersImpl("John");
-		assertFalse(test.getID() == test.getID());
+		assertFalse(test.getID() == test2.getID());
 	}
 }
